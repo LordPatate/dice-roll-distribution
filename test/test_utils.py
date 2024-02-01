@@ -1,6 +1,6 @@
 import pytest
 
-from utils import frequency_map, result_list_for_multiple_dices
+from utils import frequency_map, result_iter_for_multiple_dices
 
 
 @pytest.mark.parametrize(
@@ -14,7 +14,7 @@ from utils import frequency_map, result_list_for_multiple_dices
     )
 )
 def test_result_list(number_of_dices, number_of_sides, output):
-    assert result_list_for_multiple_dices(number_of_dices, number_of_sides) == output
+    assert list(result_iter_for_multiple_dices(number_of_dices, number_of_sides)) == output
 
 
 @pytest.mark.parametrize(
@@ -25,5 +25,5 @@ def test_result_list(number_of_dices, number_of_sides, output):
     )
 )
 def test_freq_map(number_of_dices, number_of_sides, output):
-    result_list = result_list_for_multiple_dices(number_of_dices, number_of_sides)
-    assert frequency_map(result_list) == output
+    results = result_iter_for_multiple_dices(number_of_dices, number_of_sides)
+    assert frequency_map(results) == output
