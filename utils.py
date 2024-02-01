@@ -17,13 +17,9 @@ def probability_distribution(number_of_dices, number_of_sides):
 
 def result_iter_for_multiple_dices(numbers_of_dices, number_of_sides):
     result_list_for_one_dice = np.arange(1, number_of_sides + 1)
-    cartesian_product_of_results = itertools.product(
-        *(
-            result_list_for_one_dice
-            for _ in range(numbers_of_dices)
+    cartesian_product_of_results = np.array(list(
+        itertools.product(
+            *(result_list_for_one_dice for _ in range(numbers_of_dices))
         )
-    )
-    return (
-        sum(results)
-        for results in cartesian_product_of_results
-    )
+    ))
+    return np.sum(cartesian_product_of_results, axis=1)
