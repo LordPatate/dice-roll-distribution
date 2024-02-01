@@ -1,3 +1,4 @@
+from collections import Counter
 import functools
 import numpy as np
 import itertools
@@ -6,7 +7,7 @@ import itertools
 @functools.cache
 def probability_distribution(number_of_dices, number_of_sides):
     results = result_iter_for_multiple_dices(number_of_dices, number_of_sides)
-    frequencies = frequency_map(results)
+    frequencies = Counter(results)
     number_of_cases = number_of_sides**number_of_dices
     return {
         result: frequency / number_of_cases
@@ -26,10 +27,3 @@ def result_iter_for_multiple_dices(numbers_of_dices, number_of_sides):
         sum(results)
         for results in cartesian_product_of_results
     )
-
-
-def frequency_map(result_list):
-    freq_map = dict()
-    for result in result_list:
-        freq_map[result] = freq_map.get(result, 0) + 1
-    return freq_map
