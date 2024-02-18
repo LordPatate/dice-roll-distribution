@@ -2,7 +2,7 @@ import itertools
 import numpy as np
 import pytest
 
-from utils import cartesian_product, result_iter_for_multiple_dices
+from src.utils import cartesian_product, result_iter_for_multiple_dices
 
 
 @pytest.mark.parametrize(
