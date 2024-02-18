@@ -21,6 +21,14 @@ def result_iter_for_multiple_dices(number_of_dices, number_of_sides):
     return np.sum(cartesian_product_of_results, axis=1)
 
 
+def best_of_multiple_dices(number_of_dices, number_of_sides):
+    result_list_for_one_dice = np.arange(1, number_of_sides + 1)
+    cartesian_product_of_results = cartesian_product(
+        *([result_list_for_one_dice] * number_of_dices)
+    )
+    return np.max(cartesian_product_of_results, axis=1)
+
+
 def cartesian_product(*arrays):
     """Alternative to itertools.product.
     

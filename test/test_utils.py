@@ -2,7 +2,7 @@ import itertools
 import numpy as np
 import pytest
 
-from src.utils import cartesian_product, result_iter_for_multiple_dices
+from src.utils import cartesian_product, result_iter_for_multiple_dices, best_of_multiple_dices
 
 
 @pytest.mark.parametrize(
@@ -17,6 +17,21 @@ from src.utils import cartesian_product, result_iter_for_multiple_dices
 )
 def test_result_list(number_of_dices, number_of_sides, output):
     assert list(result_iter_for_multiple_dices(number_of_dices, number_of_sides)) == output
+
+
+@pytest.mark.parametrize(
+    "number_of_dices, number_of_sides, output",
+    (
+        (1, 6, [1, 2, 3, 4, 5, 6]),
+        (2, 4, [1, 2, 3, 4,
+                2, 2, 3, 4,
+                3, 3, 3, 4,
+                4, 4, 4, 4]),
+    )
+)
+def test_best_of(number_of_dices, number_of_sides, output):
+    assert list(best_of_multiple_dices(number_of_dices, number_of_sides)) == output
+
 
 
 @pytest.mark.parametrize(
