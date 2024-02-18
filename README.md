@@ -63,3 +63,46 @@ The more dices we roll, the narrower the curve gets. The more sides the dice has
 ![Distribution of 3d12](./figures/3d12.png)
 #### 7d12
 ![Distribution of 7d12](./figures/7d12.png)
+
+## Best of dices
+
+When rolling multiple dices and selecting the highest result.
+Typically how the "advantage" works in D&D: roll two d20s and keep the best outcome.
+
+### Two dices
+
+The distribution is **linear**.
+![Best of 2d20](./figures/2d20.png)
+
+#### Explanation
+
+Let's take two d4s as example and study all possible scenarios.
+
+| /     |     | 1   | 2   | 3   | 4   |
+| ----- | --- | --- | --- | --- | --- |
+| **1** |     | 1   | 2   | 3   | 4   |
+| **2** |     | 2   | 2   | 3   | 4   |
+| **3** |     | 3   | 3   | 3   | 4   |
+| **4** |     | 4   | 4   | 4   | 4   |
+
+Each outcome has 2 more favorable scenarios than the previous.
+
+### Three or more dices
+
+With more dices, the curve appears to look like a polynomial.
+Given that it's linear with one dice, I'll guess it's a polynomial of a degree equal to the number of dices minus 1 (between 0 and 1).
+
+If you have any explanation, I'd be curious to hear it.
+
+#### 3d20
+![Best of 3d20](./figures/3d20.png)
+
+#### 6d20
+![Best of 6d20](./figures/6d20.png)
+
+#### Comparison with polynomials
+
+- In green: $f(x) = x^2$ (which looks like 3d20).
+- In blue: $f(x) = x^5$ (which looks like 6d20).
+
+![Curves of x2 and x5 between 0 and 1](./figures/polynomials.png)
