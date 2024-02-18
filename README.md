@@ -12,6 +12,7 @@ These rolls are typically called 'XdY', e.g. '1d6' (one 6-sided dice) or '5d4' (
 
 When rolling one dice, each result is as likely as any other.
 The distribution is said to be **[uniform](https://en.wikipedia.org/wiki/Discrete_uniform_distribution)**.
+
 ![Distribution of 1d6](./figures/1d6.png)
 
 ### Two dices
@@ -19,6 +20,7 @@ The distribution is said to be **[uniform](https://en.wikipedia.org/wiki/Discret
 When rolling two dices, extremes can only occur when both dices rolled their smallest number or when both rolled their biggest number.
 Probabilities increase linearly as we get closer to the middle.
 This distribution is said to be **[triangular](https://en.wikipedia.org/wiki/Triangular_distribution)**.
+
 ![Distribution of 2d6](./figures/2d6.png)
 
 #### Explanation
