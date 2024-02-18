@@ -3,8 +3,8 @@ from collections import Counter
 import numpy as np
 
 
-def probability_distribution(number_of_dices, number_of_sides):
-    results = result_iter_for_multiple_dices(number_of_dices, number_of_sides)
+def probability_distribution(number_of_dices, number_of_sides, result_generator):
+    results = result_generator(number_of_dices, number_of_sides)
     frequencies = Counter(results)
     number_of_cases = number_of_sides**number_of_dices
     return {
