@@ -72,6 +72,7 @@ Typically how the "advantage" works in D&D: roll two d20s and keep the best outc
 ### Two dices
 
 The distribution is **linear**.
+
 ![Best of 2d20](./figures/2d20.png)
 
 #### Explanation
@@ -89,7 +90,7 @@ Each outcome has 2 more favorable scenarios than the previous.
 
 ### Three or more dices
 
-With more dices, the curve appears to look like a polynomial.
+With more dices, the curve appears to look like a [polynomial](https://en.wikipedia.org/wiki/Polynomial).
 Given that it's linear with one dice, I'll guess it's a polynomial of a degree equal to the number of dices minus 1 (between 0 and 1).
 
 If you have any explanation, I'd be curious to hear it.
